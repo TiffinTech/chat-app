@@ -1,0 +1,19 @@
+{
+    "name": "mofodojodino/profanity-filter",
+    "description": "Filters out profanities from strings.",
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "~2.0",
+        "phpunit/phpunit": "~4.8"
+    },
+    "autoload": {"psr-0": {"": "src"}},
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dean Tedesco",
+            "email": "dino@tedesco.net.au"
+        }
+    ]
+}
