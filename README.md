@@ -1,4 +1,4 @@
-Chatservice Installation Instructions 
+# Chatservice Installation Instructions 
 
 ♠ Unzip the contents of the main zip file
 ♠ Upload all files and folders into your web server.
