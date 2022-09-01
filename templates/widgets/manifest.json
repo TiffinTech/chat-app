@@ -1,0 +1,23 @@
+    "dir": "{{LANG.direction}}",
+    "lang": "{{LANG.code}}",
+    "name": "{{SETTINGS.site_name}}",
+    "short_name": "{{SETTINGS.site_name}}",
+    "scope": "{{SITE_URL}}",
+    "display": "standalone",
+    "start_url": "{{start_url}}",
+    "background_color": "{{pwa_background_color}}",
+    "theme_color": "{{pwa_theme_color}}",
+    "description": "{{SETTINGS.site_name}} App",
+    "orientation": "any",
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "{{pwa_icon}}",
+            "type": "image/png",
+            "sizes": "192x192"
+        }
+    ],
+    "url": "{{SITE_URL}}",
+    "screenshots": []
+}
