@@ -1,0 +1,69 @@
+{% extends "widgets/base.widget.html" %}
+{% block content %}
+<section class="bg-white py-5 main-content">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="custom-control custom-radio custom-control-inline">
+                  <input type="radio" checked class="custom-control-input room-choice" value='0' id="allrooms" name="room-choice">
+                  <label class="custom-control-label" for="allrooms">{{ _('All Rooms') }}</label>
+                </div>
+                {% if USER.user_type == 2 %}
+                <div class="custom-control custom-radio custom-control-inline">
+                  <input type="radio" class="custom-control-input room-choice" value="{{ USER.id }}" id="myrooms" name="room-choice">
+                  <label class="custom-control-label" for="myrooms">{{ _('My Chatrooms') }}</label>
+                </div>
+                {% endif %}
+
+            </div>
+            <div class="col ml-auto room-sort">
+                <div class="input-group input-group-sm mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1"><i class="fas fa-sort"></i></span>
+                  </div>
+                  <select class="form-control form-control-sm room-sort-select" name="">
+                      <option value="most_users_first" {{SETTINGS.chat_room_order == 'most_users_first' ? 'selected' : '' }} >{{ _('Most Users First') }}</option>
+                      <option value="least_users_first" {{SETTINGS.chat_room_order == 'least_users_first' ? 'selected' : '' }} >{{ _('Least Users First') }}</option>
+                      <option value="newest_first" {{SETTINGS.chat_room_order == 'newest_first' ? 'selected' : '' }} >{{ _('Newest First') }}</option>
+                      <option value="oldest_first" {{SETTINGS.chat_room_order == 'oldest_first' ? 'selected' : '' }} >{{ _('Oldest First') }}</option>
+                  </select>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="input-group mb-5">
+                    <input type="text" class="form-control small" id="search_chatroom" placeholder="{{_('Search for chat rooms...')}}" aria-label="Search" >
+                    <div class="input-group-append">
+                        <button class="btn btn-danger" id="clear_search" type="button">
+                            <i class="fas fa-times fa-sm"></i>
+                        </button>
+                    </div>
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" id="search_chatroom_btn" type="button">
+                            <i class="fas fa-search fa-sm"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- chat room loop -->
+        <div class="row" id="chat-room-loop">
+            {% if style == "small" %}
+                {% include 'chat_room_loop_small.html' %}
+            {% else %}
+                {% include 'chat_room_loop_large.html' %}
+            {% endif %}
+        </div>
+        <input type="hidden" id="chat_room_cont" value="{{ SETTINGS.homepage_chat_room_limit?SETTINGS.homepage_chat_room_limit:6 }}">
+        <div class="row justify-content-md-center mb-5 mt-5">
+            <div class="col-md-3 text-center">
+                <div id="load-more-end" class="hidden">{{ _("You've Reached The End!") }}</div>
+                <a href="javascript:void(0)" class="btn btn-sm btn-success" id="load-more">{{ _('Load More') }} <i class="hidden fas fa-spinner fa-spin"></i> </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
