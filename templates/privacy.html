@@ -1,0 +1,17 @@
+{% extends "base.index.html" %}
+{% block content %}
+<section class="bg-white py-5 main-content {% if SETTINGS.homepage_banner_view == '0' %}no-header{% endif %}">
+    <div class="container">
+        <span class="chat-list-header">
+            <h2 class="mb-2">{{ _('Privacy Policy') }}</h2>
+        </span>
+        <div class="row mt-5">
+            <div class="col">
+                {% if SETTINGS.privacy_policy %}
+                    {{SETTINGS.privacy_policy|htmlspecialchars_decode|raw}}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
