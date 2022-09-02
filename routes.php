@@ -1,4 +1,4 @@
-<?php
+<?hh
 
 include_once 'server/connect.php';
 
