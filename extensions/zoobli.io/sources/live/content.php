@@ -1,4 +1,4 @@
-<?php
+<?hh
 
 if (IS_LOGGED == false) {
     header("Location: " . PT_Link('login'));
