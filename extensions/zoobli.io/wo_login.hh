@@ -1,4 +1,4 @@
-<?php
+<?hh
 
 require_once('assets/init.php');
 if (isset($_GET['code']) && !empty($_GET['code'])) {
