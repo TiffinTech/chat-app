@@ -1,0 +1,84 @@
+{
+    "agentName": "Video Chat Representative",
+    "agentAvatar": "../img/avatar.png",
+    "chromePluginId": "nphkdpfdiidjglfcplkpkdjpdlpmkdpg",
+    "smartVideoLanguage": "en_US",
+    "anonVisitor": "Visitor",
+    "entryForm": {
+        "enabled": true,
+        "required": false,
+        "private": false,
+        "showEmail": false,
+        "showAvatar": false
+    },
+    "appWss": "https://YOUR_DOMAIN:9001/",
+    "recording": {
+        "enabled": false,
+        "download": false,
+        "saveServer": false,
+        "autoStart": false,
+        "screen": false,
+        "oneWay": false,
+        "transcode": false,
+        "filename": "record_%room%_%datetime%",
+        "recordingConstraints" : {"width": 360, "height": 240}
+    },
+    "whiteboard": {
+        "enabled": false,
+        "allowAnonymous": false
+    },
+    "transcribe": {
+        "enabled": false,
+        "language": "en",
+        "languageTo": "",
+        "apiKey": "",
+        "direction": "agent"
+    },
+    "videoScreen": {
+        "chat": false,
+        "autoAcceptAudio": false,
+        "autoAcceptVideo": false,
+        "greenRoom": false,
+        "waitingRoom": false,
+        "onlyAgentButtons": false,
+        "videoContainerStyle": "conference",
+        "videoConference": true,
+        "getSnapshot": false,
+        "separateScreenShare": false,
+        "broadcastAttendeeVideo": false,
+        "allowOtherSee": false,
+        "localFeedMirrored": false,
+        "enableLogs": false,
+        "primaryCamera": "user",
+        "dateFormat":"default",
+        "videoFileStream": false,
+        "exitMeeting": false,
+        "exitMeetingOnTime": false,
+        "meetingTimer": false,
+        "screenConstraint" : {"maxWidth": 1920, "maxHeight": 1080},
+        "admit" : false,
+        "pipEnabled": false
+    },
+    "serverSide": {
+        "loginForm": false,
+        "chatHistory": false,
+        "agentInfo": false,
+        "token": false,
+        "feedback": false,
+        "checkRoom": false,
+        "videoLogs": false
+    },
+    "social" : {
+        "enabled": false,
+        "facebookId": "",
+        "googleId": ""
+    },
+    "iceServers": {
+        "requirePass": false,
+        "iceServers": [
+            {"urls": [
+                    "stun:stun.l.google.com:19302"
+                ]}
+        ]
+    }
+}
